@@ -15,7 +15,7 @@ class ProgressBar(object):
         self.__progN__ = '%s / %s' % (st, st % iterations)
 
     def update(self, progress=None, text=''):
-        if progress == None:
+        if progress is None:
             self.currentProgress += 1
             progress = self.currentProgress
         else:
@@ -25,7 +25,7 @@ class ProgressBar(object):
     def reset(self, newNbrIter=None):
         self._startTime = time.time()
         self.currentProgress = 0
-        if newNbrIter != None:
+        if newNbrIter is not None:
             self.iterations = newNbrIter
 
     def _time_to_string(self, elapsedTime):
